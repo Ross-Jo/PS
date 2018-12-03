@@ -1,12 +1,12 @@
 package baekjoon;
 
 // https://www.acmicpc.net/problem/1289
+// 오답 - 이유 : 높은 시간복잡도 및 갔던 path를 2번 방문 
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Q1289 {
 	static int N;
@@ -20,23 +20,14 @@ public class Q1289 {
 	}
 	static Node[] tree;
 	static boolean[] v;
-	static int[][] dp;
 	static int start;
 	static int ans = 0;
 	static final int MOD = 1000000007;
 	
-	static void dfs(int here, int pathWeight, int des) {
+	static void dfs(int here, int pathWeight) {
 		v[here] = true;
 		
-		if (here == start) {
-			int ret = dp[des][start];
-			if (ret != -1) return;
-		}
-		
 		if (here != start) {
-			int calc = pathWeight % MOD;
-			dp[start][here] = calc;
-			dp[here][start] = calc;
 			ans += pathWeight % MOD;
 		}
 		
@@ -44,22 +35,17 @@ public class Q1289 {
 		for (int i=0; i<s; i++) {
 			int next = tree[here].c.get(i);
 			if(!v[next]) {
-				dfs(next, (pathWeight * tree[here].w.get(i)) % MOD, des);
+				dfs(next, (pathWeight * tree[here].w.get(i)) % MOD);
 			}
 		}
-		
-		System.out.println("here: " + here + " " +ans);
-//		v[here] = false;
 	}
 	
 	public static void main(String args[]) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
 		tree = new Node[N+1];
-		dp = new int[N+1][N+1];
 		
 		for (int i=0; i<tree.length; i++) tree[i] = new Node();
-		for (int i=0; i<dp.length; i++) Arrays.fill(dp[i], -1);
 		
 		for (int i=0; i<N-1; i++) {
 			String[] tmp = br.readLine().split(" ");
@@ -72,12 +58,10 @@ public class Q1289 {
 			tree[r].w.add(w);
 		}
 		
-		for (int i=1; i<N; i++) {
-			for (int j=i+1; j<=N; j++) {
-				v = new boolean[N+1];
-				start = i;
-				dfs(i, 1, j);
-			}
+		for (int i=1; i<=N; i++) {
+			v = new boolean[N+1];
+			start = i;
+			dfs(i, 1);
 		}
 		
 		System.out.println(ans % MOD);
