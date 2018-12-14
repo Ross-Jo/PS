@@ -49,12 +49,13 @@ public class Q2618 {
 		int fir, sec;
 		int next = Math.max(x, y) + 1;
 		
-		if (x==0) fir = func(next, y) + getdist(d[next], new Pair(1, 1));
+		if (x==0) fir = func(next, y) + getdist(d[next], new Pair(1, 1)); // 기존에 캐싱된 정보를 활용함 
 		else fir = func(next, y) + getdist(d[next], d[x]);
 		
 		if (y==0) sec = func(x, next) + getdist(d[next], new Pair(n, n));
 		else sec = func(x, next) + getdist(d[next], d[y]);
 		
+		// 이미 결론을 알고 있기 때문에, 알고 있는 결론을 가지고 어느 경찰차가 어느 사건을 처리했는지 트래킹해 들어간다. 
 		if (fir < sec) {
 			back[next] = 1;
 			solve(next, y);
