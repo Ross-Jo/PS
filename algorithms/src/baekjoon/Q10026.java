@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Q10026 {
+public class Q10026 { 
 	static int N; 
 	static char[][] map;
 	static int[][] c;
