@@ -46,33 +46,37 @@ public class Q1977 {
 	}
 
 	// 다른 사람의 풀이 - 참고 및 비교해 볼 것 
-	//	public static void main(String args[]) throws IOException {
-	//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-	//
-	//		int M = Integer.parseInt(br.readLine());
-	//		int N = Integer.parseInt(br.readLine());
-	//
-	//		int x = 25;
-	//		int y = 25;
-	//		for (int i = 0; i < 5; i++) {
-	//			x = (x * x + M) / (2 * x);
-	//			y = (y * y + N) / (2 * y);
+	// 아래의 코드는 바빌로니안 방식으로 제곱근을 계산한 것이라고 할 수 있다. 
+	// 참고 : https://en.wikipedia.org/wiki/Methods_of_computing_square_roots
+	// 참고 : https://suhak.tistory.com/228
+	
+	//		public static void main(String args[]) throws IOException {
+	//			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	//			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	//	
+	//			int M = Integer.parseInt(br.readLine());
+	//			int N = Integer.parseInt(br.readLine());
+	//	
+	//			int x = 25;
+	//			int y = 25;
+	//			for (int i = 0; i < 5; i++) {
+	//				x = (x * x + M) / (2 * x);
+	//				y = (y * y + N) / (2 * y);
+	//			}
+	//			if (x * x < M) {
+	//				x++;
+	//			}
+	//	
+	//			int sum = 0;
+	//			for (int i = x; i <= y; i++) {
+	//				sum += i * i;
+	//			}
+	//			if (sum == 0)
+	//				bw.write("-1\n");
+	//			else {
+	//				bw.write(sum + "\n");
+	//				bw.write(x * x + "\n");
+	//			}
+	//			bw.flush();
 	//		}
-	//		if (x * x < M) {
-	//			x++;
-	//		}
-	//
-	//		int sum = 0;
-	//		for (int i = x; i <= y; i++) {
-	//			sum += i * i;
-	//		}
-	//		if (sum == 0)
-	//			bw.write("-1\n");
-	//		else {
-	//			bw.write(sum + "\n");
-	//			bw.write(x * x + "\n");
-	//		}
-	//		bw.flush();
-	//	}
 }
