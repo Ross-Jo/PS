@@ -8,7 +8,6 @@ public class Q1676 {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-//		int tc = 0; 
 		int fc = 0;
 		
 		if (n==0) {
@@ -21,11 +20,6 @@ public class Q1676 {
 			boolean flag = true;
 			while(flag) {
 				flag = false;
-//				if (target % 2 == 0) {
-//					target /= 2;
-//					tc++;
-//					flag = true;
-//				}
 				if (target % 5 == 0) {
 					target /= 5;
 					fc++;
@@ -34,7 +28,6 @@ public class Q1676 {
 			}
 		}
 		
-//		System.out.println(tc > fc ? fc : tc);
 		System.out.println(fc);
 		
 		sc.close();
