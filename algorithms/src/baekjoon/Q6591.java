@@ -1,6 +1,7 @@
 package baekjoon;
 
-//https://www.acmicpc.net/problem/6591
+// https://www.acmicpc.net/problem/6591
+// 참고 : https://www.acmicpc.net/board/view/20044
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
