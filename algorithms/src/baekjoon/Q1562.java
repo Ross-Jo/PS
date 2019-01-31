@@ -11,7 +11,7 @@ public class Q1562 {
 	static int n, ans;
 	static int[][][] dp = new int[101][10][1 << 10];
 
-	static int dfs(int idx, int num, int bit) { // 숫자의 길이, 계단수의 시작 숫자, 해당 숫자가 0~9까지의 숫자를 다 활용하는지 체크
+	static int dfs(int idx, int num, int bit) { // 숫자의 길이, 계단수의 마지막 숫자, 해당 숫자가 0~9까지의 숫자를 다 활용하는지 체크
 		if (dp[idx][num][bit] != 0) return dp[idx][num][bit];
 		if (idx == n) return bit == (1 << 10) - 1 ? 1 : 0;
 
