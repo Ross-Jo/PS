@@ -1,6 +1,7 @@
 package baekjoon;
 
 // https://www.acmicpc.net/problem/1958
+// 참고 : https://mygumi.tistory.com/126 
 // [다시풀기]
 
 import java.io.BufferedReader;
