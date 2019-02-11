@@ -19,8 +19,7 @@ public class Q5639 {
 		}
 	}
 	
-	static Node r;
-	static int[] nums = new int[10000];
+	static Node r; // 루트노드 
 	static int t;
 	
 	public static void makeTree(Node root) {
@@ -36,7 +35,7 @@ public class Q5639 {
 	}
 	
 	public static void printPostOrder(BufferedWriter bw, Node root) throws IOException {
-		if (root == null || root.num==0) return;
+		if (root == null || root.num == 0) return;
 		printPostOrder(bw, root.left);
 		printPostOrder(bw, root.right);
 		bw.write(Integer.toString(root.num)+"\n");
