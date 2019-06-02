@@ -47,7 +47,7 @@ import java.util.StringTokenizer;
 /*
  * [배운점]
  * - 선언 순서에 따라 속도차이가 발생하기도 한다. (int value[] = new int[N]이 왜 int result[] = new int[N] 위에서 선언되면 코드가 통과가 안되지?)
- * - split 보다는 stringTokenizer가 빠르다. 참고 : https://mygumi.tistory.com/78
+ * - split 보다는 stringTokenizer가 빠르다(정규식이나 인덱스 접근과 같은 처리가 필요없다면). 참고 : https://mygumi.tistory.com/78
  * - Integer.toString은 생각보다 느리다. 참고 : https://stackoverflow.com/questions/11001330/java-split-string-performances
  * - ArrayDeque가 LinkedList Deque보다 빠르다(캐시때문). 참고 : https://stackoverflow.com/questions/6163166/why-is-arraydeque-better-than-linkedlist
  */
