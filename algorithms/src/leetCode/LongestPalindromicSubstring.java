@@ -35,13 +35,13 @@ public class LongestPalindromicSubstring {
 		int start = 0, end = 0;
 		for (int i = 0; i < s.length(); i++) {
 			
-			int len1 = expandAroundCenter(s, i, i);
-			int len2 = expandAroundCenter(s, i, i + 1);
+			int len1 = expandAroundCenter(s, i, i); // 팰린드롬의 길이가 홀수인경우 
+			int len2 = expandAroundCenter(s, i, i + 1); // 팰린드롬의 길이가 짝수인경우 
 			
 			int len = Math.max(len1, len2);
 			
 			if (len > end - start) {
-				start = i - (len - 1) / 2;
+				start = i - (len - 1) / 2; // 팰린드롬의 길이가 짝수인 경우 때문에 코드가 이렇게 작성됨 
 				end = i + len / 2;
 			}
 			
